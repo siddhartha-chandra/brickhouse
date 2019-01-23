@@ -27,7 +27,6 @@ import org.joda.time.format.DateTimeFormatter;
  * Given two dates in YYYYMMDD,
  * return the number of days between
  * midnight on each day..
- * <p/>
  * day_diff( "20120701", "20120702") == 1
  * day_diff( "20120701", "20120701") == 0
  */

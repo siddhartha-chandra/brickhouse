@@ -56,28 +56,20 @@ import java.util.Properties;
 
 /**
  * UDF to access a distributed map file
- * <p/>
  * Assumes the file is a tab-separated file of name-value pairs,
  * which has been placed in distributed cache using the "add file" command
- * <p/>
  * Example
- * <p/>
  * INSERT OVERWRITE LOCAL DIRECTORY mymap select key,value from my_map_table;
  * ADD FILE mymap;
- * <p/>
  * select key, val* distributed_map( key, 'mymap') from the_table;
- * <p/>
- * <p/>
  * If one argument is passed in, it is assumed to be a filename, containing
- * a map of type map<string,double>, and the entire map is returned.
- * <p/>
+ * a map of type @{@literal map<string,double>}, and the entire map is returned.
  * If two arguments are passed in, it is either filename, and a string specifying the
- * type of the map ( i.e distributed_map('mymap','map<string,bigint>'); ) and returns
+ * type of the map ( i.e distributed_map('mymap',{@literal 'map<string,bigint>'}); ) and returns
  * the entire map, or it is the key and the filename ( ie distributed_map( key, 'mymap'),
  * and only the key's value is returned.
- * <p/>
  * If there are three arguments passed in, it is assumed to be the key, the filename, and the
- * maptype, (i.e distributed_map( key, 'mymap', 'map<string,bigint>') )
+ * maptype, (i.e distributed_map( key, 'mymap', @{@literal 'map<string,bigint>'}) )
  */
 @UDFType(deterministic = false)
 public class DistributedMapUDF extends GenericUDF {
@@ -217,10 +209,9 @@ public class DistributedMapUDF extends GenericUDF {
     /**
      * Either one, two or three values can be passed in.
      * If one argument is passed it, it is implied that the
-     * return value is a map<string,double>. If three arguments
+     * return value is a @{@literal map<string,double>}. If three arguments
      * are passed in, then it is implied the arguments are the
      * map key, the map filename, and the value type.
-     * <p/>
      * If two arguments are passed in, it is implied that either)
      * a map key, and a filename are being passed in,
      * or a filename, and a map return type are being passed in.

@@ -36,7 +36,6 @@ import org.apache.log4j.Logger;
 
 /**
  * Aggregate and return a HyperLogLog.
- * <p/>
  * Uses Clearspring's Stream-lib project
  */
 

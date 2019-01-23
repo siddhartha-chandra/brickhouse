@@ -38,10 +38,8 @@ import org.joda.time.format.DateTimeFormatter;
 /**
  * DateRange is a UDTF for generating days from start date to end_date,
  * inclusively.
- * <p/>
  * This might be useful in cases where one needed to have a row for every day in
  * the range ...
- * <p/>
  * select t1.id, t1.date, coalesce( t2.val, 0.0 ) as val from ( select id,
  * rng.date from tab1 lateral view( date_range( tab1.start_date, tab1.end_date )
  * ) rng as date, index ) t1 left outer join ( select val from tab2 ) t2 on (

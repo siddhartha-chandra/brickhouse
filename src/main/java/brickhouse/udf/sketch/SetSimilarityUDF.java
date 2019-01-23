@@ -8,7 +8,6 @@ import java.util.List;
 
 /**
  * Compute the Jaccard similarity of two sketch sets.
- * <p/>
  * Jaccard Similarity is defined as the size of the intersection of two sets divided by the
  * size of the union of the sets. Since sketches are only approximate measures, this
  * calculation only makes sense when the sets are roughly the same size.

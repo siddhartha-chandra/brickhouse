@@ -34,10 +34,9 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.StringObjectInspe
 
 /**
  * UDF to combine two sketch sets, to estimate size of set union.
- * <p/>
  * Sketch sets can be either the set of original strings or the
- * MD5 hashes. If array<string> is passed in, it is assumed to be
- * the original sketch_set values; if array<bigint> is used, then
+ * MD5 hashes. If array {@literal <string>} is passed in, it is assumed to be
+ * the original sketch_set values; if array {@literal <bigint>} is used, then
  * it is assumed to be the KMin hash values created with sketch_values
  */
 @Description(name = "combine_sketch",

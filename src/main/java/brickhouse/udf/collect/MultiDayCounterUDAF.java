@@ -45,14 +45,12 @@ import java.util.List;
 /**
  * Count and count uniques for several day periods
  * ( i.e produce 1, 7 and 30 counts for various events)
- * <p>Input is a YYYYMMDD representation of the date counts are being generated,
+ * Input is a YYYYMMDD representation of the date counts are being generated,
  * a date representation of the date associated with the events,
  * a bigint of the event count for that day period,
  * an array of uniques for that count (or a sketch set for those uniques),
  * and an array of ints representing the dates being counted over ( ie. [1,7,30] ).
- * </p>
- * <p/>
- * <p>Output is a array of structs containing the num of days counted, the sum of events
+ * Output is a array of structs containing the num of days counted, the sum of events
  * over that date
  */
 

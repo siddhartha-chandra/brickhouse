@@ -74,8 +74,6 @@ public class BloomFactory {
      * the distributed cache. Next the bloom is attempted to be
      * parsed from UUencoded format.
      *
-     * @param name
-     * @return
      */
     public static Filter GetBloomFilter(String str) {
         Filter bloom = GetNamedBloomFilter(str);

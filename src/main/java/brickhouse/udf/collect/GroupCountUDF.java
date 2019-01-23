@@ -26,16 +26,15 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  * same value for a particular grouping.
  * This allows us to count how many rows are in a grouping and cap them
  * off after a certain point.
- * <p/>
- * <p>For example, we can cap-off the number of records per ks_uid with something like
- * <p/>
+ * For example, we can cap-off the number of records per ks_uid with something like
+ *
  * select
  * ks_uid, val, group_count(ks_uid) as rank
  * from
  * (  select ks_uid, val from table1
  * distribute  by ks_uid
  * sort by ks_uid, val ) ordered_keys
- * where group_count( ks_uid ) < 100
+ * where group_count( ks_uid ) @{@literal <} 100
  */
 @Description(
         name = "group_count",

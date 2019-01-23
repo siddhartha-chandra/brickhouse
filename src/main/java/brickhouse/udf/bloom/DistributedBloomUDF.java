@@ -39,15 +39,11 @@ import java.io.IOException;
 
 /**
  * UDF to acccess a bloom stored from a file stored in distributed cache
- * <p/>
  * Assumes the file is a tab-separated file of name-value pairs,
  * which has been placed in distributed cache using the "add file" command
- * <p/>
  * Example
- * <p/>
  * INSERT OVERWRITE LOCAL DIRECTORY mybloom select bloom(key) from my_map_table where premise=true;
  * ADD FILE mybloom;
- * <p/>
  * select *
  * from my_big_table
  * where bloom_contains( key, distributed_bloom('mybloom') ) == true;

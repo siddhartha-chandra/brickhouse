@@ -30,10 +30,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.IntObjectInspecto
 /**
  * Workaround for the Hive bug
  * https://issues.apache.org/jira/browse/HIVE-1955
- * <p/>
  * FAILED: Error in semantic analysis: Line 4:3 Non-constant expressions for array indexes not supported key
- * <p/>
- * <p/>
  * Use instead of [ ] syntax,
  */
 public class ArrayIndexUDF extends GenericUDF {

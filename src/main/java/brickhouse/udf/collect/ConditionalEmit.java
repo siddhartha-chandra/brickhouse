@@ -37,19 +37,16 @@ import java.util.List;
 /**
  * ConditionalEmit takes an array of booleans and strings,
  * and emits records if the boolean is true.
- * <p/>
  * This allows you to emit multiple rows on one pass of the data,
  * rather than doing a union of multiple views with different where clauses.
- * <p/>
  * select
- * conditional_emit( array( maxwell_score > 80 ,
- * abs( maxwell_score - other.maxwell_score ) < 5,
+ * conditional_emit( array( maxwell_score @{@literal >} 80 ,
+ * abs( maxwell_score - other.maxwell_score ) @{@literal <} 5,
  * city = "New York" ),
  * array( "CELEB" , "PEER", "NEW_YORKER" ) )
  * from big_table_which_is_hard_to_sort;
  */
-@Description(name = "conditional_emit",
-        value = "_FUNC_(a,b) - Emit features of a row according to various conditions ")
+@Description(name = "conditional_emit", value = "_FUNC_(a,b) - Emit features of a row according to various conditions ")
 public class ConditionalEmit extends GenericUDTF {
     private ListObjectInspector conditionInspector = null;
     private ListObjectInspector featureInspector = null;

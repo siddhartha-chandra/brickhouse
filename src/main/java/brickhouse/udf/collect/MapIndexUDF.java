@@ -31,10 +31,7 @@ import java.util.Map;
 /**
  * Workaround for the Hive bug
  * https://issues.apache.org/jira/browse/HIVE-1955
- * <p/>
  * FAILED: Error in semantic analysis: Line 4:3 Non-constant expressions for array indexes not supported key
- * <p/>
- * <p/>
  * Use instead of [ ] syntax,
  */
 public class MapIndexUDF extends GenericUDF {

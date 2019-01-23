@@ -8,7 +8,6 @@ import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
  * Calculate the MD5 hash for a String.
- * <p/>
  * Useful for sketching ...
  *
  * @author jeromebanks

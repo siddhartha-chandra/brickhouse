@@ -30,7 +30,6 @@ import java.util.TreeMap;
 
 /**
  * Cast an Map to the string to string map
- * <p/>
  * Based on CastArrayUDF.
  */
 public class CastMapUDF extends GenericUDF {
