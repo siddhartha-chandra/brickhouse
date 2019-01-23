@@ -37,6 +37,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.StandardMapObjectInspector;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 
 
@@ -248,8 +249,11 @@ public class CollectUDAF extends AbstractGenericUDAFResolver {
         private void putIntoSet(Object key, Object val, MapAggBuffer myagg) {
             Object keyCopy = ObjectInspectorUtils.copyToStandardObject(key, this.inputKeyOI);
             Object valCopy = ObjectInspectorUtils.copyToStandardObject(val, this.inputValOI);
-
-            myagg.collectMap.put(keyCopy, valCopy);
+            List<String> valCopy_ls = (List<String>)valCopy;
+            valCopy_ls.removeIf(i -> i.equals(""));
+            if (valCopy != null && valCopy_ls.size() > 0) {
+              myagg.collectMap.put(keyCopy, valCopy);
+            }
         }
 
         @Override
